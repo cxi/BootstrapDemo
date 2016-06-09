@@ -5,3 +5,134 @@
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+
+
+<div class="col-md-12">
+    <section id="tab-demo">
+        <ul class="nav nav-tabs">
+            <li class="active"> <a data-toggle="tab" href="#first">first</a></li>
+            <li> <a data-toggle="tab" href="#second">second</a></li>
+            <li> <a data-toggle="tab" href="#third">third</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="first" class="tab-pane active fade in active">  Visual Studio includes over 200 code snippets for C#, Visual Basic, XML, and HTML (which includes ASP.NET markup). Code snippets consist of prewritten programming code or markup. In some cases, the snippet contains placeholders for information (such as a property name) that you can specify after you have inserted the code snippet. You can use code snippets in the code editor, and in Source view of the HTML editor when you are creating a Web page.</div>
+            <div id="second" class="tab-pane fade"> In this walkthrough, you add HTML and ASP.NET markup to a Web Forms page. Almost all snippets have a quick way to insert the code. For example, to insert an ASP.NET Button server control into a Web Forms pages, you can type and then press the tab key twice. alternatively, you can type button and then press the tab key once. when you do, the editor completes the markup for the button control by inserting the following markup</div>
+            <div id="third" class="tab-pane fade">The following illustration shows the Code Snippets Manager dialog box.</div>
+
+        </div>
+
+    </section>
+</div>
+
+<div class="container">
+    <h2>Dynamic Tabs</h2>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+        <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+        <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h3>HOME</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <h3>Menu 1</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3>Menu 2</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+        <div id="menu3" class="tab-pane fade">
+            <h3>Menu 3</h3>
+            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+    </div>
+</div>
+
+<!--
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+-->
+<div id="AletMsg"></div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <form role="form" class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label" for="lblName">Name</label>
+                    <input type="text" data-toggle="tooltip" data-placement="bottom" title="Put your fxxking name!" class="form-control" id="InputName" placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="lblEmail">Email address</label>
+                    <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#myModal">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModal-label">Are you sure</h4>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel-changes">Cancel</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" id="commit-changes">Commit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $('#commit-changes').click(function () {
+            var alertHtml = '<div class="alert  alert-success fade in" role="alert" id="AletMsg">'
+            + '<strong>changes saved</strong>'
+            + '</div>'
+            $('#AletMsg').replaceWith(alertHtml);
+        });
+    });
+
+    $(function () {
+        $('#cancel-changes').click(function () {
+            var alertHtml = '<div class="alert  alert-warning fade in" role="alert" id="AletMsg">'
+            + '<strong>changes canceled</strong>'
+            + '</div>'
+            $('#AletMsg').replaceWith(alertHtml);
+        });
+    });
+</script>
